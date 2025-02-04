@@ -1,70 +1,139 @@
-# Getting Started with Create React App
+# Hospital Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hospital Finder is a React-based web application that allows users to log in via Google authentication, fetch their current location, and display nearby hospitals on an interactive map. The app uses Firebase for authentication, Google Maps API for mapping, and OpenStreetMap's Nominatim API for hospital data.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Google Authentication**: Secure login using Google Sign-In.
+- **Live Location Fetching**: Automatically retrieves the user's current location.
+- **Interactive Map**: Displays the user's location and nearby hospitals with custom markers.
+- **Manual Search**: Allows users to search for specific locations or hospitals by name.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Professional UI**: Built with Material-UI for a polished user experience.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, Material-UI, @react-google-maps/api
+- **Backend**: Firebase (Authentication)
+- **APIs**:
+  - Google Maps JavaScript API
+  - OpenStreetMap Nominatim API
+- **State Management**: React Hooks (useState, useEffect)
+- **Styling**: CSS-in-JS with Material-UI, Custom Map Markers
+- **Environment Variables**: Managed via `.env` file
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Node.js**: Ensure you have [Node.js](https://nodejs.org/) installed.
+2. **Firebase Project**: Create a Firebase project and enable Google Authentication.
+3. **Google Maps API Key**: Obtain a Google Maps API key from the [Google Cloud Console](https://console.cloud.google.com/).
+4. **OpenStreetMap API**: No additional setup required; the app uses the free Nominatim API.
 
-### `npm run build`
+### Steps to Set Up Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/hospital-finder.git
+   cd hospital-finder
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Set Up Environment Variables**
 
-### `npm run eject`
+   Create a `.env` file in the root directory and add the following variables:
+   ```env
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
+   REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Start the Development Server**
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. **Access the App**
+   Open your browser and navigate to `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Login**: Click the "Sign in with Google" button to authenticate.
+2. **Fetch Location**: Allow the app to access your location or manually enter a location.
+3. **View Hospitals**: Nearby hospitals will be displayed on the map with markers.
+4. **Search**: Use the search bar to find specific locations or hospitals by name.
 
-## Learn More
+## Folder Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+hospital-finder/
+├── public/               # Public assets
+├── src/
+│   ├── components/       # Reusable components (e.g., Map, Login)
+│   ├── services/         # Firebase and geolocation services
+│   ├── App.js            # Main application logic
+│   ├── index.js          # Entry point
+│   └── theme.js          # Material-UI theme configuration
+├── .env                  # Environment variables
+├── package.json          # Project dependencies
+└── README.md             # This file
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+To deploy the app, you can use platforms like Firebase Hosting, Netlify, or Vercel:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Build the project:
+   ```bash
+   npm run build
+   ```
 
-### Analyzing the Bundle Size
+2. Deploy the `build` folder to your hosting provider.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Security Considerations
 
-### Making a Progressive Web App
+- **API Keys**: Never commit your `.env` file to version control. Add it to `.gitignore`.
+- **Restrict API Keys**: In the Google Cloud Console, restrict your API keys to specific domains or IP addresses.
+- **Firebase Rules**: Configure Firebase security rules to protect your data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
 
-### Advanced Configuration
+Contributions are welcome! To contribute:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeatureName`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeatureName`).
+5. Open a pull request.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### `npm run build` fails to minify
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Firebase](https://firebase.google.com/)
+- [Google Maps Platform](https://cloud.google.com/maps-platform/)
+- [OpenStreetMap](https://www.openstreetmap.org/)
+- [Material-UI](https://mui.com/)
+
+---
+
+For any questions or issues, please open an issue in the GitHub repository.
+```
+
+### Notes:
+1. Replace placeholders like `your_firebase_api_key` with actual instructions for obtaining these keys.
+2. If you plan to include screenshots or a demo video, add a section called "Screenshots" or "Demo" with images or links.
+3. Customize the "Acknowledgments" section if you used additional libraries or tools.
+
+This README provides a comprehensive overview of your project, making it easy for others to understand and contribute.
