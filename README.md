@@ -129,11 +129,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 For any questions or issues, please open an issue in the GitHub repository.
-```
-
-### Notes:
-1. Replace placeholders like `your_firebase_api_key` with actual instructions for obtaining these keys.
-2. If you plan to include screenshots or a demo video, add a section called "Screenshots" or "Demo" with images or links.
-3. Customize the "Acknowledgments" section if you used additional libraries or tools.
-
-This README provides a comprehensive overview of your project, making it easy for others to understand and contribute.
