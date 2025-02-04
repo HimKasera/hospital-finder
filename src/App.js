@@ -36,14 +36,14 @@ function App() {
       if (user) fetchLocationAndHospitals();
     });
     return () => unsubscribe();
-  }, []);
+  }, [fetchLocationAndHospitals]);
 
   const fetchLocationAndHospitals = async (customLocation) => {
     try {
       setLoading(true);
       setError('');
       setSelectedHospital(null);
-      
+
       let position = location;
       if (!customLocation) {
         position = await getCurrentLocation();
@@ -52,7 +52,7 @@ function App() {
 
       const hospitals = await searchHospitals(customLocation || position);
       setHospitals(hospitals);
-      
+
     } catch (err) {
       setError(err.message || "Failed to get location or hospitals");
       console.error("Fetch error:", err);
@@ -183,7 +183,7 @@ function App() {
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
             Find nearby medical facilities quickly
           </Typography>
-          
+
           <Button
             variant="contained"
             size="large"
