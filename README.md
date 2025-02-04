@@ -35,7 +35,7 @@ Hospital Finder is a React-based web application that allows users to log in via
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/hospital-finder.git
+   git clone https://github.com/HimKasera/hospital-finder.git
    cd hospital-finder
    ```
 
