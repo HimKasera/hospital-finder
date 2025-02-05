@@ -2,6 +2,8 @@
 
 Hospital Finder is a React-based web application that allows users to log in via Google authentication, fetch their current location, and display nearby hospitals on an interactive map. The app uses Firebase for authentication, Google Maps API for mapping, and OpenStreetMap's Nominatim API for hospital data.
 
+   👉 Watch the demo [here](https://drive.google.com/file/d/1zwPItfjDl5OXIuYZMbuTReEZ3JVKFH8A/view?usp=sharing).
+   
 ## Features
 
 - **Google Authentication**: Secure login using Google Sign-In.
