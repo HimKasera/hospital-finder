@@ -71,6 +71,8 @@ Hospital Finder is a React-based web application that allows users to log in via
 2. **Fetch Location**: Allow the app to access your location or manually enter a location.
 3. **View Hospitals**: Nearby hospitals will be displayed on the map with markers.
 4. **Search**: Use the search bar to find specific locations or hospitals by name.
+   
+   👉 Watch the demo [here](https://drive.google.com/file/d/1zwPItfjDl5OXIuYZMbuTReEZ3JVKFH8A/view?usp=sharing).
 
 ## Folder Structure
 
