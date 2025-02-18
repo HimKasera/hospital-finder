@@ -1,31 +1,37 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Prevent layout issues caused by padding/margins */
+}
+
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: clamp(50px, 20vmin, 150px); /* Responsive height */
   pointer-events: none;
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.App-logo:hover {
+  transform: scale(1.1); /* Slightly enlarge logo on hover */
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -36,19 +42,89 @@
     transform: rotate(360deg);
   }
 }
+
+.App-header {
+  font-size: clamp(1rem, 2vmin, 2rem); /* Fluid typography */
+  line-height: 1.6; /* Improve readability */
+  max-width: 90%; /* Limit width for better readability */
+  margin: 0 auto; /* Center content horizontally */
+}
+
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.App-link:hover {
+  color: #4bc9e6; /* Lighter shade on hover */
+}
+
+/* Mobile-First Design */
+.App-header {
+  padding: 20px;
+}
+
+.App-logo {
+  height: clamp(40px, 15vmin, 120px); /* Adjust logo size for smaller screens */
+}
+
+/* Tablet Screens */
+@media (min-width: 481px) and (max-width: 768px) {
+  .App-header {
+    font-size: clamp(1rem, 2.5vmin, 1.8rem); /* Slightly larger font size */
+    padding: 25px;
+  }
+
+  .App-logo {
+    height: clamp(50px, 18vmin, 140px); /* Larger logo for tablets */
+  }
+}
+
+/* Desktop Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .App-header {
+    font-size: clamp(1rem, 3vmin, 2rem); /* Larger font size for desktops */
+    padding: 30px;
+  }
+
+  .App-logo {
+    height: clamp(60px, 20vmin, 160px); /* Larger logo for desktops */
+  }
+}
+
+/* Large Desktop Screens */
+@media (min-width: 1025px) {
+  .App-header {
+    font-size: clamp(1.2rem, 3.5vmin, 2.5rem); /* Even larger font size */
+    padding: 40px;
+  }
+
+  .App-logo {
+    height: clamp(70px, 22vmin, 200px); /* Largest logo for large desktops */
+  }
+}
+
+/* Google Maps Styles */
 .gm-style .gm-style-iw-d {
-  overflow: hidden !important;
+  overflow: auto !important; /* Ensure scrollable content */
+  max-height: 300px; /* Limit height for better usability */
 }
 
 .gm-style .gm-style-iw-c {
-  padding: 10px !important;
-  max-width: 250px !important;
-}
-.gm-style .gm-style-iw-c {
-  padding: 0 !important;
-  max-width: 300px !important;
+  padding: 15px !important;
+  max-width: 95vw !important; /* Responsive width */
+  box-sizing: border-box;
 }
 
-.gm-style .gm-style-iw-d {
-  overflow: auto !important;
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .App {
+    background-color: #121212; /* Darker background for dark mode */
+    color: #e0e0e0; /* Lighter text for contrast */
+  }
+
+  .App-link {
+    color: #03dac6; /* Bright accent for dark mode */
+  }
 }
